@@ -17,7 +17,7 @@ export const cryptoApi = createApi({
     // this is the endpoint builder function.
     getCryptos: builder.query({
       // get cryptos endpoint, that uses url. baseURL/exchanges
-      query: () => createRequest("/coins"),
+      query: (count) => createRequest(`/coins?limit=${count}`),
     }),
   }),
 });
