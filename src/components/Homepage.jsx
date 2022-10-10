@@ -1,8 +1,14 @@
 import React from "react";
 import { Typography, Row, Col, Statistic } from "antd";
+import { useGetCryptosQuery } from "../services/cryptoApi";
+import millify from "millify";
+import { Link } from "react-router-dom";
+const { Title } = Typography;
 
 const Homepage = () => {
-  const { Title } = Typography;
+  const { data, isFetching } = useGetCryptosQuery(); // custom hook created by redux
+  console.log(data);
+
   return (
     <>
       <Title level={5}>Global Crypto Stats</Title>
